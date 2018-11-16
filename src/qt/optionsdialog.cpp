@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/safeinsure-config.h"
+#include "config/Dashlite-config.h"
 #endif
 
 #include "optionsdialog.h"
@@ -213,7 +213,7 @@ void OptionsDialog::setMapper()
 
     /* Privatesend Rounds */
     mapper->addMapping(ui->privatesendRounds, OptionsModel::PrivatesendRounds);
-    mapper->addMapping(ui->anonymizeSafeInsure, OptionsModel::AnonymizeSafeInsureAmount);
+    mapper->addMapping(ui->anonymizeDashlite, OptionsModel::AnonymizeDashliteAmount);
     mapper->addMapping(ui->showMasternodesTab, OptionsModel::ShowMasternodesTab);
 }
 

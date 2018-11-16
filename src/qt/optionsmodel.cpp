@@ -1,12 +1,12 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2018 The SafeInsure Core developers
+// Copyright (c) 2017-2018 The Dashlite Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/safeinsure-config.h"
+#include "config/Dashlite-config.h"
 #endif
 
 #include "optionsmodel.h"
@@ -76,11 +76,11 @@ void OptionsModel::Init()
     if (!settings.contains("nPrivatesendRounds"))
         settings.setValue("nPrivatesendRounds", 2);
 
-    if (!settings.contains("nAnonymizeSafeInsureAmount"))
-        settings.setValue("nAnonymizeSafeInsureAmount", 1000);
+    if (!settings.contains("nAnonymizeDashliteAmount"))
+        settings.setValue("nAnonymizeDashliteAmount", 1000);
 
     nPrivatesendRounds = settings.value("nPrivatesendRounds").toLongLong();
-    nAnonymizeSafeInsureAmount = settings.value("nAnonymizeSafeInsureAmount").toLongLong();
+    nAnonymizeDashliteAmount = settings.value("nAnonymizeDashliteAmount").toLongLong();
 
     if (!settings.contains("fShowMasternodesTab"))
         settings.setValue("fShowMasternodesTab", masternodeConfig.getCount());
@@ -147,8 +147,8 @@ void OptionsModel::Init()
 
     if (settings.contains("nPrivatesendRounds"))
         SoftSetArg("-privatesendrounds", settings.value("nPrivatesendRounds").toString().toStdString());
-    if (settings.contains("nAnonymizeSafeInsureAmount"))
-        SoftSetArg("-anonymizesafeinsureamount", settings.value("nAnonymizeSafeInsureAmount").toString().toStdString());
+    if (settings.contains("nAnonymizeDashliteAmount"))
+        SoftSetArg("-anonymizeDashliteamount", settings.value("nAnonymizeDashliteAmount").toString().toStdString());
 
     language = settings.value("language").toString();
 }
@@ -159,7 +159,7 @@ void OptionsModel::Reset()
 
     // Remove all entries from our QSettings object
     settings.clear();
-    resetSettings = true; // Needed in safeinsure.cpp during shotdown to also remove the window positions
+    resetSettings = true; // Needed in Dashlite.cpp during shotdown to also remove the window positions
 
     // default setting for OptionsModel::StartAtStartup - disabled
     if (GUIUtil::GetStartOnSystemStartup())
@@ -228,8 +228,8 @@ QVariant OptionsModel::data(const QModelIndex& index, int role) const
             return settings.value("nThreadsScriptVerif");
         case PrivatesendRounds:
             return QVariant(nPrivatesendRounds);
-        case AnonymizeSafeInsureAmount:
-            return QVariant(nAnonymizeSafeInsureAmount);
+        case AnonymizeDashliteAmount:
+            return QVariant(nAnonymizeDashliteAmount);
         case Listen:
             return settings.value("fListen");
         default:
@@ -338,10 +338,10 @@ bool OptionsModel::setData(const QModelIndex& index, const QVariant& value, int 
             settings.setValue("nPrivatesendRounds", nPrivatesendRounds);
             emit privatesendRoundsChanged(nPrivatesendRounds);
             break;
-        case AnonymizeSafeInsureAmount:
-            nAnonymizeSafeInsureAmount = value.toInt();
-            settings.setValue("nAnonymizeSafeInsureAmount", nAnonymizeSafeInsureAmount);
-            emit anonymizeSafeInsureAmountChanged(nAnonymizeSafeInsureAmount);
+        case AnonymizeDashliteAmount:
+            nAnonymizeDashliteAmount = value.toInt();
+            settings.setValue("nAnonymizeDashliteAmount", nAnonymizeDashliteAmount);
+            emit anonymizeDashliteAmountChanged(nAnonymizeDashliteAmount);
             break;
         case CoinControlFeatures:
             fCoinControlFeatures = value.toBool();

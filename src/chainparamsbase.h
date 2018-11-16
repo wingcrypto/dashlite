@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between safeinsure-cli and safeinsured)
- * of a given instance of the SafeInsure system.
+ * CBaseChainParams defines the base parameters (shared between Dashlite-cli and Dashlited)
+ * of a given instance of the Dashlite system.
  */
 class CBaseChainParams
 {

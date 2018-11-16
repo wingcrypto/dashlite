@@ -46,10 +46,10 @@ static bool AppInitRawTx(int argc, char* argv[])
 
     if (argc < 2 || mapArgs.count("-?") || mapArgs.count("-help")) {
         // First part of help message is specific to this utility
-        std::string strUsage = _("SafeInsure Core safeinsure-tx utility version") + " " + FormatFullVersion() + "\n\n" +
+        std::string strUsage = _("Dashlite Core Dashlite-tx utility version") + " " + FormatFullVersion() + "\n\n" +
                                _("Usage:") + "\n" +
-                               "  safeinsure-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded safeinsure transaction") + "\n" +
-                               "  safeinsure-tx [options] -create [commands]   " + _("Create hex-encoded safeinsure transaction") + "\n" +
+                               "  Dashlite-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded Dashlite transaction") + "\n" +
+                               "  Dashlite-tx [options] -create [commands]   " + _("Create hex-encoded Dashlite transaction") + "\n" +
                                "\n";
 
         fprintf(stdout, "%s", strUsage.c_str());
@@ -550,7 +550,7 @@ static int CommandLineRawTx(int argc, char* argv[])
             if (argc < 2)
                 throw runtime_error("too few parameters");
 
-            // param: hex-encoded safeinsure transaction
+            // param: hex-encoded Dashlite transaction
             string strHexTx(argv[1]);
             if (strHexTx == "-") // "-" implies standard input
                 strHexTx = readStdin();

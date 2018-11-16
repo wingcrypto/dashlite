@@ -1,25 +1,25 @@
-# /etc/conf.d/safeinsured: config file for /etc/init.d/safeinsured
+# /etc/conf.d/Dashlited: config file for /etc/init.d/Dashlited
 
 # Config file location
-#BITCOIND_CONFIGFILE="/etc/safeinsure/safeinsure.conf"
+#BITCOIND_CONFIGFILE="/etc/Dashlite/Dashlite.conf"
 
 # What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
-#BITCOIND_PIDDIR="/var/run/safeinsured"
+#BITCOIND_PIDDIR="/var/run/Dashlited"
 
 # What filename to give the pidfile
-#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/safeinsured.pid"
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/Dashlited.pid"
 
-# Where to write safeinsured data (be mindful that the blockchain is large)
-#BITCOIND_DATADIR="/var/lib/safeinsured"
+# Where to write Dashlited data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/Dashlited"
 
-# User and group to own safeinsured process
-#BITCOIND_USER="safeinsure"
-#BITCOIND_GROUP="safeinsure"
+# User and group to own Dashlited process
+#BITCOIND_USER="Dashlite"
+#BITCOIND_GROUP="Dashlite"
 
-# Path to safeinsured executable
-#BITCOIND_BIN="/usr/bin/safeinsured"
+# Path to Dashlited executable
+#BITCOIND_BIN="/usr/bin/Dashlited"
 
-# Nice value to run safeinsured under
+# Nice value to run Dashlited under
 #BITCOIND_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)

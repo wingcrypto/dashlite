@@ -10,10 +10,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both safeinsured and safeinsure-qt, to make it harder for attackers to
+ * for both Dashlited and Dashlite-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("SafeInsure Core");
+const std::string CLIENT_NAME("Dashlite Core");
 
 /**
  * Client version number

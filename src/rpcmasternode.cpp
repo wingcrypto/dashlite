@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2018 The SafeInsure Core developers
+// Copyright (c) 2017-2018 The Dashlite Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -37,7 +37,7 @@ void SendMoney(const CTxDestination& address, CAmount nValue, CWalletTx& wtxNew,
         throw JSONRPCError(RPC_WALLET_ERROR, strError);
     }
 
-    // Parse SafeInsure address
+    // Parse Dashlite address
     CScript scriptPubKey = GetScriptForDestination(address);
 
     // Create and send the transaction
@@ -57,8 +57,8 @@ Value privatesend(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() == 0)
         throw runtime_error(
-            "privatesend <safeinsureaddress> <amount>\n"
-            "safeinsureaddress, reset, or auto (AutoDenominate)"
+            "privatesend <Dashliteaddress> <amount>\n"
+            "Dashliteaddress, reset, or auto (AutoDenominate)"
             "<amount> is a real and will be rounded to the next 0.1" +
             HelpRequiringPassphrase());
 
@@ -79,14 +79,14 @@ Value privatesend(const Array& params, bool fHelp)
 
     if (params.size() != 2)
         throw runtime_error(
-            "privatesend <safeinsureaddress> <amount>\n"
-            "safeinsureaddress, denominate, or auto (AutoDenominate)"
+            "privatesend <Dashliteaddress> <amount>\n"
+            "Dashliteaddress, denominate, or auto (AutoDenominate)"
             "<amount> is a real and will be rounded to the next 0.1" +
             HelpRequiringPassphrase());
 
     CBitcoinAddress address(params[0].get_str());
     if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid SafeInsure address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Dashlite address");
 
     // Amount
     CAmount nAmount = AmountFromValue(params[1]);
@@ -110,7 +110,7 @@ Value getpoolinfo(const Array& params, bool fHelp)
 
             "\nResult:\n"
             "{\n"
-            "  \"current\": \"addr\",    (string) SafeInsure address of current masternode\n"
+            "  \"current\": \"addr\",    (string) Dashlite address of current masternode\n"
             "  \"state\": xxxx,        (string) unknown\n"
             "  \"entries\": xxxx,      (numeric) Number of entries\n"
             "  \"accepted\": xxxx,     (numeric) Number of entries accepted\n"
@@ -154,7 +154,7 @@ Value masternode(const Array& params, bool fHelp)
             "  debug        - Print masternode status\n"
             "  genkey       - Generate new masternodeprivkey\n"
             "  outputs      - Print masternode compatible outputs\n"
-            "  start        - Start masternode configured in safeinsure.conf\n"
+            "  start        - Start masternode configured in Dashlite.conf\n"
             "  start-alias  - Start single masternode by assigned alias configured in masternode.conf\n"
             "  start-<mode> - Start masternodes configured in masternode.conf (<mode>: 'all', 'missing', 'disabled')\n"
             "  status       - Print masternode status information\n"
@@ -257,7 +257,7 @@ Value listmasternodes(const Array& params, bool fHelp)
             "    \"outidx\": n,         (numeric) Collateral transaction output index\n"
             "    \"status\": s,         (string) Status (ENABLED/EXPIRED/REMOVE/etc)\n"
 			"    \"ip\": \"ip\",        (string) Masternode IP address\n"
-            "    \"addr\": \"addr\",    (string) Masternode SafeInsure address\n"
+            "    \"addr\": \"addr\",    (string) Masternode Dashlite address\n"
             "    \"version\": v,        (numeric) Masternode protocol version\n"
             "    \"lastseen\": ttt,     (numeric) The time in seconds since epoch (Jan 1 1970 GMT) of the last seen\n"
             "    \"activetime\": ttt,   (numeric) The time in seconds since epoch (Jan 1 1970 GMT) masternode has been active\n"
@@ -737,7 +737,7 @@ Value getmasternodestatus (const Array& params, bool fHelp)
             "  \"txhash\": \"xxxx\",      (string) Collateral transaction hash\n"
             "  \"outputidx\": n,        (numeric) Collateral transaction output index number\n"
             "  \"netaddr\": \"xxxx\",     (string) Masternode network address\n"
-            "  \"addr\": \"xxxx\",        (string) SafeInsure address for masternode payments\n"
+            "  \"addr\": \"xxxx\",        (string) Dashlite address for masternode payments\n"
             "  \"status\": \"xxxx\",      (string) Masternode status\n"
             "  \"message\": \"xxxx\"      (string) Masternode status message\n"
             "}\n"
@@ -779,7 +779,7 @@ Value getmasternodewinners (const Array& params, bool fHelp)
             "  {\n"
             "    \"nHeight\": n,           (numeric) block height\n"
             "    \"winner\": {\n"
-            "      \"address\": \"xxxx\",    (string) SafeInsure MN Address\n"
+            "      \"address\": \"xxxx\",    (string) Dashlite MN Address\n"
             "      \"nVotes\": n,          (numeric) Number of votes for winner\n"
             "    }\n"
             "  }\n"
@@ -792,7 +792,7 @@ Value getmasternodewinners (const Array& params, bool fHelp)
             "    \"nHeight\": n,           (numeric) block height\n"
             "    \"winner\": [\n"
             "      {\n"
-            "        \"address\": \"xxxx\",  (string) SafeInsure MN Address\n"
+            "        \"address\": \"xxxx\",  (string) Dashlite MN Address\n"
             "        \"nVotes\": n,        (numeric) Number of votes for winner\n"
             "      }\n"
             "      ,...\n"

@@ -1,10 +1,10 @@
 Sample configuration files for:
 
-SystemD: safeinsured.service
-Upstart: safeinsured.conf
-OpenRC:  safeinsured.openrc
-         safeinsured.openrcconf
-CentOS:  safeinsured.init
+SystemD: Dashlited.service
+Upstart: Dashlited.conf
+OpenRC:  Dashlited.openrc
+         Dashlited.openrcconf
+CentOS:  Dashlited.init
 
 have been made available to assist packagers in creating node packages here.
 

@@ -37,12 +37,12 @@
         <file alias="tx_input">res/icons/tx_input.png</file>
         <file alias="tx_output">res/icons/tx_output.png</file>
         <file alias="tx_inout">res/icons/tx_inout.png</file>
-        <file alias="unit_safeinsure">res/icons/unit_safeinsure.png</file>
-        <file alias="unit_msafeinsure">res/icons/unit_msafeinsure.png</file>
-        <file alias="unit_usafeinsure">res/icons/unit_usafeinsure.png</file>
-        <file alias="unit_tsafeinsure">res/icons/unit_tsafeinsure.png</file>
-        <file alias="unit_tmsafeinsure">res/icons/unit_tmsafeinsure.png</file>
-        <file alias="unit_tusafeinsure">res/icons/unit_tusafeinsure.png</file>
+        <file alias="unit_Dashlite">res/icons/unit_Dashlite.png</file>
+        <file alias="unit_mDashlite">res/icons/unit_mDashlite.png</file>
+        <file alias="unit_uDashlite">res/icons/unit_uDashlite.png</file>
+        <file alias="unit_tDashlite">res/icons/unit_tDashlite.png</file>
+        <file alias="unit_tmDashlite">res/icons/unit_tmDashlite.png</file>
+        <file alias="unit_tuDashlite">res/icons/unit_tuDashlite.png</file>
         <file alias="lock_closed">res/icons/lock_closed.png</file>
         <file alias="lock_open">res/icons/lock_open.png</file>
         <file alias="key">res/icons/key.png</file>
@@ -58,7 +58,7 @@
     </qresource>
     <qresource prefix="/images">
         <file alias="about">res/images/about.png</file>
-        <file alias="safeinsure_logo_horizontal">res/images/safeinsure_logo_horizontal.png</file>
+        <file alias="Dashlite_logo_horizontal">res/images/Dashlite_logo_horizontal.png</file>
         <file alias="downArrow">res/images/downArrow.png</file>
         <file alias="downArrow_small">res/images/downArrow_small.png</file>
         <file alias="upArrow_small">res/images/upArrow_small.png</file>

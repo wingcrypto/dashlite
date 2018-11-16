@@ -1,19 +1,19 @@
 [Unit]
-Description=SafeInsure's distributed currency daemon
+Description=Dashlite's distributed currency daemon
 After=network.target
 
 [Service]
-User=safeinsure
-Group=safeinsure
+User=Dashlite
+Group=Dashlite
 
 Type=forking
-PIDFile=/var/lib/safeinsured/safeinsured.pid
+PIDFile=/var/lib/Dashlited/Dashlited.pid
 
-ExecStart=/usr/bin/safeinsured -daemon -pid=/var/lib/safeinsured/safeinsured.pid \
-          -conf=/etc/safeinsure/safeinsure.conf -datadir=/var/lib/safeinsured
+ExecStart=/usr/bin/Dashlited -daemon -pid=/var/lib/Dashlited/Dashlited.pid \
+          -conf=/etc/Dashlite/Dashlite.conf -datadir=/var/lib/Dashlited
 
-ExecStop=-/usr/bin/safeinsure-cli -conf=/etc/safeinsure/safeinsure.conf \
-         -datadir=/var/lib/safeinsured stop
+ExecStop=-/usr/bin/Dashlite-cli -conf=/etc/Dashlite/Dashlite.conf \
+         -datadir=/var/lib/Dashlited stop
 
 Restart=always
 PrivateTmp=true

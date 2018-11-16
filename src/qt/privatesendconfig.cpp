@@ -41,7 +41,7 @@ void PrivatesendConfig::clickBasic()
         model->getOptionsModel()->getDisplayUnit(), 1000 * COIN));
     QMessageBox::information(this, tr("Privatesend Configuration"),
         tr(
-            "Privatesend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening SafeInsure's configuration screen.")
+            "Privatesend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Dashlite's configuration screen.")
             .arg(strAmount));
 
     close();
@@ -55,7 +55,7 @@ void PrivatesendConfig::clickHigh()
         model->getOptionsModel()->getDisplayUnit(), 1000 * COIN));
     QMessageBox::information(this, tr("Privatesend Configuration"),
         tr(
-            "Privatesend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening SafeInsure's configuration screen.")
+            "Privatesend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Dashlite's configuration screen.")
             .arg(strAmount));
 
     close();
@@ -69,7 +69,7 @@ void PrivatesendConfig::clickMax()
         model->getOptionsModel()->getDisplayUnit(), 1000 * COIN));
     QMessageBox::information(this, tr("Privatesend Configuration"),
         tr(
-            "Privatesend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening SafeInsure's configuration screen.")
+            "Privatesend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Dashlite's configuration screen.")
             .arg(strAmount));
 
     close();
@@ -80,8 +80,8 @@ void PrivatesendConfig::configure(bool enabled, int coins, int rounds)
     QSettings settings;
 
     settings.setValue("nPrivatesendRounds", rounds);
-    settings.setValue("nAnonymizeSafeInsureAmount", coins);
+    settings.setValue("nAnonymizeDashliteAmount", coins);
 
     nPrivatesendRounds = rounds;
-    nAnonymizeSafeInsureAmount = coins;
+    nAnonymizeDashliteAmount = coins;
 }

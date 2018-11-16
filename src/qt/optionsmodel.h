@@ -44,7 +44,7 @@ public:
         DatabaseCache,       // int
         SpendZeroConfChange, // bool
         PrivatesendRounds,   // int
-        AnonymizeSafeInsureAmount, //int
+        AnonymizeDashliteAmount, //int
         ShowMasternodesTab,  // bool
         Listen,              // bool
         OptionIDRowCount,
@@ -90,7 +90,7 @@ private:
 signals:
     void displayUnitChanged(int unit);
     void privatesendRoundsChanged(int);
-    void anonymizeSafeInsureAmountChanged(int);
+    void anonymizeDashliteAmountChanged(int);
     void coinControlFeaturesChanged(bool);
 };
 

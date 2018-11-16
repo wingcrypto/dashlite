@@ -95,7 +95,7 @@ public:
 };
 
 /**
- * SafeInsure RPC command dispatcher.
+ * Dashlite RPC command dispatcher.
  */
 class CRPCTable
 {

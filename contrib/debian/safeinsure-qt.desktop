@@ -1,12 +1,12 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=SafeInsure
-Comment=SafeInsure P2P Cryptocurrency
-Comment[fr]=SafeInsure, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=SafeInsure, eşten eşe kriptografik sanal para birimi
-Exec=safeinsure-qt %u
+Name=Dashlite
+Comment=Dashlite P2P Cryptocurrency
+Comment[fr]=Dashlite, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Dashlite, eşten eşe kriptografik sanal para birimi
+Exec=Dashlite-qt %u
 Terminal=false
 Type=Application
-Icon=safeinsure128
-MimeType=x-scheme-handler/safeinsure;
+Icon=Dashlite128
+MimeType=x-scheme-handler/Dashlite;
 Categories=Office;Finance;

@@ -2,9 +2,9 @@ Multi masternode config
 =======================
 
 The multi masternode config allows you to control multiple masternodes from a single wallet. The wallet needs to have a valid collateral output of 5000 coins for each masternode. To use this, place a file named masternode.conf in the data directory of your install:
- * Windows: %APPDATA%\SafeInsure\
- * Mac OS: ~/Library/Application Support/SafeInsure/
- * Unix/Linux: ~/.safeinsure/
+ * Windows: %APPDATA%\Dashlite\
+ * Mac OS: ~/Library/Application Support/Dashlite/
+ * Unix/Linux: ~/.Dashlite/
 
 The new masternode.conf format consists of a space seperated text file. Each line consisting of an alias, IP address followed by port, masternode private key, collateral output transaction id, collateral output index, donation address and donation percentage (the latter two are optional and should be in format "address:percentage").
 

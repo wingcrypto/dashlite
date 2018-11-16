@@ -1,60 +1,60 @@
-Sample init scripts and service configuration for safeinsured
+Sample init scripts and service configuration for Dashlited
 ==========================================================
 
 Sample scripts and configuration files for systemd, Upstart and OpenRC
 can be found in the contrib/init folder.
 
-    contrib/init/safeinsured.service:    systemd service unit configuration
-    contrib/init/safeinsured.openrc:     OpenRC compatible SysV style init script
-    contrib/init/safeinsured.openrcconf: OpenRC conf.d file
-    contrib/init/safeinsured.conf:       Upstart service configuration file
-    contrib/init/safeinsured.init:       CentOS compatible SysV style init script
+    contrib/init/Dashlited.service:    systemd service unit configuration
+    contrib/init/Dashlited.openrc:     OpenRC compatible SysV style init script
+    contrib/init/Dashlited.openrcconf: OpenRC conf.d file
+    contrib/init/Dashlited.conf:       Upstart service configuration file
+    contrib/init/Dashlited.init:       CentOS compatible SysV style init script
 
 1. Service User
 ---------------------------------
 
-All three startup configurations assume the existence of a "safeinsure" user
+All three startup configurations assume the existence of a "Dashlite" user
 and group.  They must be created before attempting to use these scripts.
 
 2. Configuration
 ---------------------------------
 
-At a bare minimum, safeinsured requires that the rpcpassword setting be set
+At a bare minimum, Dashlited requires that the rpcpassword setting be set
 when running as a daemon.  If the configuration file does not exist or this
-setting is not set, safeinsured will shutdown promptly after startup.
+setting is not set, Dashlited will shutdown promptly after startup.
 
 This password does not have to be remembered or typed as it is mostly used
-as a fixed token that safeinsured and client programs read from the configuration
+as a fixed token that Dashlited and client programs read from the configuration
 file, however it is recommended that a strong and secure password be used
 as this password is security critical to securing the wallet should the
 wallet be enabled.
 
-If safeinsured is run with "-daemon" flag, and no rpcpassword is set, it will
+If Dashlited is run with "-daemon" flag, and no rpcpassword is set, it will
 print a randomly generated suitable password to stderr.  You can also
 generate one from the shell yourself like this:
 
 bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'
 
-Once you have a password in hand, set rpcpassword= in /etc/safeinsure/safeinsure.conf
+Once you have a password in hand, set rpcpassword= in /etc/Dashlite/Dashlite.conf
 
 For an example configuration file that describes the configuration settings,
-see contrib/debian/examples/safeinsure.conf.
+see contrib/debian/examples/Dashlite.conf.
 
 3. Paths
 ---------------------------------
 
 All three configurations assume several paths that might need to be adjusted.
 
-Binary:              /usr/bin/safeinsured
-Configuration file:  /etc/safeinsure/safeinsure.conf
-Data directory:      /var/lib/safeinsured
-PID file:            /var/run/safeinsured/safeinsured.pid (OpenRC and Upstart)
-                     /var/lib/safeinsured/safeinsured.pid (systemd)
+Binary:              /usr/bin/Dashlited
+Configuration file:  /etc/Dashlite/Dashlite.conf
+Data directory:      /var/lib/Dashlited
+PID file:            /var/run/Dashlited/Dashlited.pid (OpenRC and Upstart)
+                     /var/lib/Dashlited/Dashlited.pid (systemd)
 
 The configuration file, PID directory (if applicable) and data directory
-should all be owned by the safeinsure user and group.  It is advised for security
+should all be owned by the Dashlite user and group.  It is advised for security
 reasons to make the configuration file and data directory only readable by the
-safeinsure user and group.  Access to safeinsure-cli and other safeinsured rpc clients
+Dashlite user and group.  Access to Dashlite-cli and other Dashlited rpc clients
 can then be controlled by group membership.
 
 4. Installing Service Configuration
@@ -66,19 +66,19 @@ Installing this .service file consists on just copying it to
 /usr/lib/systemd/system directory, followed by the command
 "systemctl daemon-reload" in order to update running systemd configuration.
 
-To test, run "systemctl start safeinsured" and to enable for system startup run
-"systemctl enable safeinsured"
+To test, run "systemctl start Dashlited" and to enable for system startup run
+"systemctl enable Dashlited"
 
 4b) OpenRC
 
-Rename safeinsured.openrc to safeinsured and drop it in /etc/init.d.  Double
+Rename Dashlited.openrc to Dashlited and drop it in /etc/init.d.  Double
 check ownership and permissions and make it executable.  Test it with
-"/etc/init.d/safeinsured start" and configure it to run on startup with
-"rc-update add safeinsured"
+"/etc/init.d/Dashlited start" and configure it to run on startup with
+"rc-update add Dashlited"
 
 4c) Upstart (for Debian/Ubuntu based distributions)
 
-Drop safeinsured.conf in /etc/init.  Test by running "service safeinsured start"
+Drop Dashlited.conf in /etc/init.  Test by running "service Dashlited start"
 it will automatically start on reboot.
 
 NOTE: This script is incompatible with CentOS 5 and Amazon Linux 2014 as they
@@ -86,11 +86,11 @@ use old versions of Upstart and do not supply the start-stop-daemon uitility.
 
 4d) CentOS
 
-Copy safeinsured.init to /etc/init.d/safeinsured. Test by running "service safeinsured start".
+Copy Dashlited.init to /etc/init.d/Dashlited. Test by running "service Dashlited start".
 
-Using this script, you can adjust the path and flags to the safeinsured program by
-setting the SafeInsureD and FLAGS environment variables in the file
-/etc/sysconfig/safeinsured. You can also use the DAEMONOPTS environment variable here.
+Using this script, you can adjust the path and flags to the Dashlited program by
+setting the DashliteD and FLAGS environment variables in the file
+/etc/sysconfig/Dashlited. You can also use the DAEMONOPTS environment variable here.
 
 5. Auto-respawn
 -----------------------------------

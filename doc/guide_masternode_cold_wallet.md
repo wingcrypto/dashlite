@@ -23,7 +23,7 @@ For this guide, I’m going to refer to your main computer’s wallet as the mai
     * Always use right button click for PASTE text in PUTTY from WINDOWS
 3. RUN script bellow(select from below, COPY, PASTE in Putty and press ENTER):
 
-   ```wget -qO- https://github.com/SafeInsure/sins-coin/releases/download/v1.0.0.0/sins_mn_installer.sh | bash```
+   ```wget -qO- https://github.com/Dashlite/sins-coin/releases/download/v1.0.0.0/sins_mn_installer.sh | bash```
     
    (It may take 2-3 minutes. It will automatically install and configure masternode wallet for your masternode server!)
 4. **Note VPS_IP:PORT and Masternode Privatekey**(this will be the masternode’s privkey) in Notepad(text file)! - We’ll use this later…
@@ -32,16 +32,16 @@ For this guide, I’m going to refer to your main computer’s wallet as the mai
 
 ### II. Install main wallet and configuration
 
-1. Go to https://www.safeinsure.io/ and download wallet for your windows
-2. Unpack it and launch ***safeinsure-qt.exe***
-3. Select "Use a custom data directory" and use D:\safeinsure\data as folder
+1. Go to https://www.Dashlite.io/ and download wallet for your windows
+2. Unpack it and launch ***Dashlite-qt.exe***
+3. Select "Use a custom data directory" and use D:\Dashlite\data as folder
 4. SETTINGS -> OPTIONS -> WALLET and check "Show Masternodes Tab". Press OK and restart main wallet
 5. TOOLS -> DEBUG CONSOLE and type the following command:
    ```getaccountaddress mn1```
 6. Send 1000 SINS to this address.(Make sure this is 100% only 1000; No less, no more.) and wait for 15 confirmations
 7. Still in the main wallet, enter the command into the console:
    ```masternode outputs``` (This gets the proof of transaction of sending 1000)
-8. Still on the main computer, go into the SafeInsure data directory(D:\safeinsure\data)
+8. Still on the main computer, go into the Dashlite data directory(D:\Dashlite\data)
    Find masternode.conf and add the following line to it:   
    
    ```<Name of Masternode(Use the name you entered earlier for simplicity)> <VPS_IP:PORT- The result of Step I.4> <Masternode Privatekey- The result of Step I.4> <Result of Step II.7> <The number after the long line in Step II.7>```
@@ -52,7 +52,7 @@ For this guide, I’m going to refer to your main computer’s wallet as the mai
    
    ```mn1 10.10.10.10:39105 5j31NEU4Mw629r9SQLiqctuAody3BL8E9tW3aQD7wR2bA2AzQhh e629899c90494cf2a0b8935bece819480db0749b59e0d65ffb55c9bffaed5f99 1```
    
-9. Still on the main computer. in same folder , open the safeinsure.conf file. Make it look like this:
+9. Still on the main computer. in same folder , open the Dashlite.conf file. Make it look like this:
 
    ```
    rpcuser=RandomUsernameOnlyAlphabeticWithoutSymbolsAndSpaces

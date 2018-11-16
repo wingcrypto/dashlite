@@ -1,6 +1,6 @@
 [Protocol]
-exec=safeinsure-qt '%u'
-protocol=safeinsure
+exec=Dashlite-qt '%u'
+protocol=Dashlite
 input=none
 output=none
 helper=true

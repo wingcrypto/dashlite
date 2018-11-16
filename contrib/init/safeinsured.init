@@ -1,31 +1,31 @@
 #!/bin/bash
 #
-#  safeinsured The SafeInsure core server.
+#  Dashlited The Dashlite core server.
 #
 #
 # chkconfig: 345 80 20
-# description: safeinsured
-# processname: safeinsured
+# description: Dashlited
+# processname: Dashlited
 #
 
 # Source function library.
 . /etc/init.d/functions
 
-# you can override defaults in /etc/sysconfig/safeinsured, see below
-if [ -f /etc/sysconfig/safeinsured ]; then
-        . /etc/sysconfig/safeinsured
+# you can override defaults in /etc/sysconfig/Dashlited, see below
+if [ -f /etc/sysconfig/Dashlited ]; then
+        . /etc/sysconfig/Dashlited
 fi
 
 RETVAL=0
 
-prog=safeinsured
-# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/safeinsured
-lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/safeinsured}
+prog=Dashlited
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/Dashlited
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/Dashlited}
 
-# safeinsured defaults to /usr/bin/safeinsured, override with BITCOIND_BIN
-bitcoind=${BITCOIND_BIN-/usr/bin/safeinsured}
+# Dashlited defaults to /usr/bin/Dashlited, override with BITCOIND_BIN
+bitcoind=${BITCOIND_BIN-/usr/bin/Dashlited}
 
-# safeinsured opts default to -disablewallet, override with BITCOIND_OPTS
+# Dashlited opts default to -disablewallet, override with BITCOIND_OPTS
 bitcoind_opts=${BITCOIND_OPTS}
 
 start() {

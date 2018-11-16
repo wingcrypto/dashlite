@@ -78,7 +78,7 @@ HEADERS += src/activemasternode.h \
            src/crypter.h \
            src/privatesend-relay.h \
            src/privatesend.h \
-           src/safeinsure-config.h \
+           src/Dashlite-config.h \
            src/db.h \
            src/eccryptoverify.h \
            src/ecwrapper.h \
@@ -131,7 +131,7 @@ HEADERS += src/activemasternode.h \
            src/wallet_ismine.h \
            src/walletdb.h \
            src/compat/sanity.h \
-           src/config/safeinsure-config.h \
+           src/config/Dashlite-config.h \
            src/crypto/common.h \
            src/crypto/hmac_sha256.h \
            src/crypto/hmac_sha512.h \
@@ -333,7 +333,7 @@ HEADERS += src/activemasternode.h \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.h \
            src/crypto/aes_helper.c \
            src/qt/bitcoinamountfield.moc \
-           src/qt/safeinsure.moc \
+           src/qt/Dashlite.moc \
            src/qt/intro.moc \
            src/qt/overviewpage.moc \
            src/qt/rpcconsole.moc \
@@ -374,9 +374,9 @@ SOURCES += src/activemasternode.cpp \
            src/crypter.cpp \
            src/privatesend-relay.cpp \
            src/privatesend.cpp \
-           src/safeinsure-cli.cpp \
-           src/safeinsure-tx.cpp \
-           src/safeinsure.cpp \
+           src/Dashlite-cli.cpp \
+           src/Dashlite-tx.cpp \
+           src/Dashlite.cpp \
            src/db.cpp \
            src/eccryptoverify.cpp \
            src/ecwrapper.cpp \
@@ -471,8 +471,8 @@ SOURCES += src/activemasternode.cpp \
            src/qt/coincontroltreewidget.cpp \
            src/qt/csvmodelwriter.cpp \
            src/qt/privatesendconfig.cpp \
-           src/qt/safeinsure.cpp \
-           src/qt/safeinsurestrings.cpp \
+           src/qt/Dashlite.cpp \
+           src/qt/Dashlitestrings.cpp \
            src/qt/editaddressdialog.cpp \
            src/qt/guiutil.cpp \
            src/qt/intro.cpp \
@@ -550,7 +550,7 @@ SOURCES += src/activemasternode.cpp \
            src/test/sighash_tests.cpp \
            src/test/sigopcount_tests.cpp \
            src/test/skiplist_tests.cpp \
-           src/test/test_safeinsure.cpp \
+           src/test/test_Dashlite.cpp \
            src/test/timedata_tests.cpp \
            src/test/transaction_tests.cpp \
            src/test/uint256_tests.cpp \
@@ -641,21 +641,21 @@ SOURCES += src/activemasternode.cpp \
            src/leveldb/helpers/memenv/memenv.cc \
            src/leveldb/helpers/memenv/memenv_test.cc \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.c
-RESOURCES += src/qt/safeinsure.qrc src/qt/safeinsure_locale.qrc
+RESOURCES += src/qt/Dashlite.qrc src/qt/Dashlite_locale.qrc
 
-TRANSLATIONS += src/qt/locale/safeinsure_bg.ts \
-                src/qt/locale/safeinsure_de.ts \
-                src/qt/locale/safeinsure_en.ts \
-                src/qt/locale/safeinsure_es.ts \
-                src/qt/locale/safeinsure_fi.ts \
-                src/qt/locale/safeinsure_fr.ts \
-                src/qt/locale/safeinsure_it.ts \
-                src/qt/locale/safeinsure_ja.ts \
-                src/qt/locale/safeinsure_pl.ts \
-                src/qt/locale/safeinsure_pt.ts \
-                src/qt/locale/safeinsure_ru.ts \
-                src/qt/locale/safeinsure_sk.ts \
-                src/qt/locale/safeinsure_sv.ts \
-                src/qt/locale/safeinsure_vi.ts \
-                src/qt/locale/safeinsure_zh_CN.ts \
-                src/qt/locale/safeinsure_zh_TW.ts
+TRANSLATIONS += src/qt/locale/Dashlite_bg.ts \
+                src/qt/locale/Dashlite_de.ts \
+                src/qt/locale/Dashlite_en.ts \
+                src/qt/locale/Dashlite_es.ts \
+                src/qt/locale/Dashlite_fi.ts \
+                src/qt/locale/Dashlite_fr.ts \
+                src/qt/locale/Dashlite_it.ts \
+                src/qt/locale/Dashlite_ja.ts \
+                src/qt/locale/Dashlite_pl.ts \
+                src/qt/locale/Dashlite_pt.ts \
+                src/qt/locale/Dashlite_ru.ts \
+                src/qt/locale/Dashlite_sk.ts \
+                src/qt/locale/Dashlite_sv.ts \
+                src/qt/locale/Dashlite_vi.ts \
+                src/qt/locale/Dashlite_zh_CN.ts \
+                src/qt/locale/Dashlite_zh_TW.ts

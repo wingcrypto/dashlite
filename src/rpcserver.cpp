@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2018 The SafeInsure Core developers
+// Copyright (c) 2017-2018 The Dashlite Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -220,10 +220,10 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop SafeInsure server.");
+            "\nStop Dashlite server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "SafeInsure server stopping";
+    return "Dashlite server stopping";
 }
 
 
@@ -300,36 +300,36 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* SafeInsure features */
-        {"safeinsure", "masternode", &masternode, true, true, false},
-        {"safeinsure", "listmasternodes", &listmasternodes, true, true, false},
-        {"safeinsure", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"safeinsure", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"safeinsure", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"safeinsure", "masternodedebug", &masternodedebug, true, true, false},
-        {"safeinsure", "startmasternode", &startmasternode, true, true, false},
-        {"safeinsure", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"safeinsure", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"safeinsure", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"safeinsure", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"safeinsure", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"safeinsure", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"safeinsure", "mnbudget", &mnbudget, true, true, false},
-        {"safeinsure", "preparebudget", &preparebudget, true, true, false},
-        {"safeinsure", "submitbudget", &submitbudget, true, true, false},
-        {"safeinsure", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"safeinsure", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"safeinsure", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"safeinsure", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"safeinsure", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"safeinsure", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"safeinsure", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"safeinsure", "checkbudgets", &checkbudgets, true, true, false},
-        {"safeinsure", "mnsync", &mnsync, true, true, false},
-        {"safeinsure", "spork", &spork, true, true, false},
-        {"safeinsure", "getpoolinfo", &getpoolinfo, true, true, false},
+        /* Dashlite features */
+        {"Dashlite", "masternode", &masternode, true, true, false},
+        {"Dashlite", "listmasternodes", &listmasternodes, true, true, false},
+        {"Dashlite", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"Dashlite", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"Dashlite", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"Dashlite", "masternodedebug", &masternodedebug, true, true, false},
+        {"Dashlite", "startmasternode", &startmasternode, true, true, false},
+        {"Dashlite", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"Dashlite", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"Dashlite", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"Dashlite", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"Dashlite", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"Dashlite", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"Dashlite", "mnbudget", &mnbudget, true, true, false},
+        {"Dashlite", "preparebudget", &preparebudget, true, true, false},
+        {"Dashlite", "submitbudget", &submitbudget, true, true, false},
+        {"Dashlite", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"Dashlite", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"Dashlite", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"Dashlite", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"Dashlite", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"Dashlite", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"Dashlite", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"Dashlite", "checkbudgets", &checkbudgets, true, true, false},
+        {"Dashlite", "mnsync", &mnsync, true, true, false},
+        {"Dashlite", "spork", &spork, true, true, false},
+        {"Dashlite", "getpoolinfo", &getpoolinfo, true, true, false},
 #ifdef ENABLE_WALLET
-        {"safeinsure", "privatesend", &privatesend, false, false, true}, /* not threadSafe because of SendMoney */
+        {"Dashlite", "privatesend", &privatesend, false, false, true}, /* not threadSafe because of SendMoney */
 
         /* Wallet */
         {"wallet", "addmultisigaddress", &addmultisigaddress, true, false, true},
@@ -594,16 +594,16 @@ void StartRPCThreads()
         unsigned char rand_pwd[32];
         GetRandBytes(rand_pwd, 32);
         uiInterface.ThreadSafeMessageBox(strprintf(
-                                             _("To use safeinsured, or the -server option to safeinsure-qt, you must set an rpcpassword in the configuration file:\n"
+                                             _("To use Dashlited, or the -server option to Dashlite-qt, you must set an rpcpassword in the configuration file:\n"
                                                "%s\n"
                                                "It is recommended you use the following random password:\n"
-                                               "rpcuser=safeinsurerpc\n"
+                                               "rpcuser=Dashliterpc\n"
                                                "rpcpassword=%s\n"
                                                "(you do not need to remember this password)\n"
                                                "The username and password MUST NOT be the same.\n"
                                                "If the file does not exist, create it with owner-readable-only file permissions.\n"
                                                "It is also recommended to set alertnotify so you are notified of problems;\n"
-                                               "for example: alertnotify=echo %%s | mail -s \"SafeInsure Alert\" admin@foo.com\n"),
+                                               "for example: alertnotify=echo %%s | mail -s \"Dashlite Alert\" admin@foo.com\n"),
                                              GetConfigFile().string(),
                                              EncodeBase58(&rand_pwd[0], &rand_pwd[0] + 32)),
             "", CClientUIInterface::MSG_ERROR | CClientUIInterface::SECURE);
@@ -1054,7 +1054,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> safeinsure-cli " + methodname + " " + args + "\n";
+    return "> Dashlite-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)

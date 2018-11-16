@@ -1,12 +1,12 @@
-SafeInsure Core integration/staging repository
+Dashlite Core integration/staging repository
 =====================================
 
-Safeinsure is a decentralized insurance marketplace bringing equitable price discovery and global access to insurance policy shoppers worldwide. SafeInsure puts consumer power back in your hands with an honest, accountable, and democratic insurance marketplace on the blockchain.
+Dashlite is a decentralized insurance marketplace bringing equitable price discovery and global access to insurance policy shoppers worldwide. Dashlite puts consumer power back in your hands with an honest, accountable, and democratic insurance marketplace on the blockchain.
 - Decentralized blockchain voting providing for consensus based advancement of the current Masternode technology used to secure the network and provide the above features, each Masternode is secured with collateral of 1000 SINS
 - Anonymized transactions using coin mixing technology, we call it _Privatesend_.
 - Fast transactions featuring guaranteed zero confirmation transactions, we call it _InstantSend_.
 
-More information at [safeinsure.io](https://www.safeinsure.io)
+More information at [Dashlite.io](https://www.Dashlite.io)
 
 ### Coin Specs
 <table>
@@ -22,7 +22,7 @@ More information at [safeinsure.io](https://www.safeinsure.io)
 <tr><td>Premine</td><td>5% *</td></tr>
 </table>
 
-*View Coin Distribution on [safeinsure.io](https://www.safeinsure.io)
+*View Coin Distribution on [Dashlite.io](https://www.Dashlite.io)
 
 ### Reward Distribution
 

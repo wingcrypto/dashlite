@@ -1,39 +1,39 @@
-SafeInsure Core
+Dashlite Core
 =====================
 
 Setup
 ---------------------
-[SafeInsure Core](http://safeinsure.org/wallet) is the original SafeInsure client and it builds the backbone of the network. However, it downloads and stores the entire history of SafeInsure transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[Dashlite Core](http://Dashlite.org/wallet) is the original Dashlite client and it builds the backbone of the network. However, it downloads and stores the entire history of Dashlite transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
-The following are some helpful notes on how to run SafeInsure on your native platform.
+The following are some helpful notes on how to run Dashlite on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- bin/32/safeinsure-qt (GUI, 32-bit) or bin/32/safeinsured (headless, 32-bit)
-- bin/64/safeinsure-qt (GUI, 64-bit) or bin/64/safeinsured (headless, 64-bit)
+- bin/32/Dashlite-qt (GUI, 32-bit) or bin/32/Dashlited (headless, 32-bit)
+- bin/64/Dashlite-qt (GUI, 64-bit) or bin/64/Dashlited (headless, 64-bit)
 
 ### Windows
 
-Unpack the files into a directory, and then run safeinsure-qt.exe.
+Unpack the files into a directory, and then run Dashlite-qt.exe.
 
 ### OSX
 
-Drag SafeInsure-Qt to your applications folder, and then run SafeInsure-Qt.
+Drag Dashlite-Qt to your applications folder, and then run Dashlite-Qt.
 
 ### Need Help?
 
-* See the documentation at the [SafeInsure Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
+* See the documentation at the [Dashlite Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
 for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [SafeInsure Forum](http://forum.safeinsure.org/).
-* Join one of our Slack groups [SafeInsure Slack Groups](https://safeinsure.org/slack-logins/).
+* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [Dashlite Forum](http://forum.Dashlite.org/).
+* Join one of our Slack groups [Dashlite Slack Groups](https://Dashlite.org/slack-logins/).
 
 Building
 ---------------------
-The following are developer notes on how to build SafeInsure on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Dashlite on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OSX Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -41,7 +41,7 @@ The following are developer notes on how to build SafeInsure on your native plat
 
 Development
 ---------------------
-The SafeInsure repo's [root README](https://github.com/safeinsure/sinscore/blob/master/README.md) contains relevant information on the development process and automated testing.
+The Dashlite repo's [root README](https://github.com/Dashlite/sinscore/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -55,8 +55,8 @@ The SafeInsure repo's [root README](https://github.com/safeinsure/sinscore/blob/
 
 ### Resources
 
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [SafeInsure](http://forum.safeinsure.org/) forum.
-* Join the [SafeInsure-Dev](https://safeinsure-dev.slack.com/) Slack group ([Sign-Up](https://safeinsure-dev.herokuapp.com/)).
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [Dashlite](http://forum.Dashlite.org/) forum.
+* Join the [Dashlite-Dev](https://Dashlite-dev.slack.com/) Slack group ([Sign-Up](https://Dashlite-dev.herokuapp.com/)).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

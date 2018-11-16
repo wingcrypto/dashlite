@@ -1,7 +1,7 @@
 Masternode Budget API
 =======================
 
-SafeInsure now supports full decentralized budgets that are paid directly from the blockchain via superblocks once per month.
+Dashlite now supports full decentralized budgets that are paid directly from the blockchain via superblocks once per month.
 
 Budgets go through a series of stages before being paid:
 * prepare - create a special transaction that destroys coins in order to make a proposal
@@ -16,7 +16,7 @@ Budgets go through a series of stages before being paid:
 Prepare collateral transaction
 ------------------------
 
-mnbudget prepare \<proposal-name\> \<url\> \<payment_count\> \<block_start\> \<safeinsure_address\> \<monthly_payment_safeinsure\> [use_ix(true|false)]
+mnbudget prepare \<proposal-name\> \<url\> \<payment_count\> \<block_start\> \<Dashlite_address\> \<monthly_payment_Dashlite\> [use_ix(true|false)]
 
 Example:
 ```
@@ -25,14 +25,14 @@ mnbudget prepare cool-project http://www.cool-project/one.json 12 100000 y6R9oN1
 
 Output: `464a0eb70ea91c94295214df48c47baa72b3876cfb658744aaf863c7b5bf1ff0` - This is the collateral hash, copy this output for the next step
 
-In this transaction we prepare collateral for "_cool-project_". This proposal will pay _1200_ SafeInsure, _12_ times over the course of a year totaling _24000_ SafeInsure.
+In this transaction we prepare collateral for "_cool-project_". This proposal will pay _1200_ Dashlite, _12_ times over the course of a year totaling _24000_ Dashlite.
 
 **Warning -- if you change any fields within this command, the collateral transaction will become invalid.**
 
 Submit proposal to network
 ------------------------
 
-mnbudget submit \<proposal-name\> \<url\> \<payment_count\> \<block_start\> \<safeinsure_address\> \<monthly_payment_safeinsure\> \<collateral_hash\>
+mnbudget submit \<proposal-name\> \<url\> \<payment_count\> \<block_start\> \<Dashlite_address\> \<monthly_payment_Dashlite\> \<collateral_hash\>
 
 Example:
 ```
@@ -138,7 +138,7 @@ Finalized budget
 Get paid
 ------------------------
 
-When block `1000000` is reached you'll receive a payment for `1200` SafeInsure.
+When block `1000000` is reached you'll receive a payment for `1200` Dashlite.
 
 
 RPC Commands
@@ -148,9 +148,9 @@ The following new RPC commands are supported:
 - mnbudget "command"... ( "passphrase" )
  * prepare            - Prepare proposal for network by signing and creating tx
  * submit             - Submit proposal for network
- * vote-many          - Vote on a SafeInsure initiative
- * vote-alias         - Vote on a SafeInsure initiative
- * vote               - Vote on a SafeInsure initiative/budget
+ * vote-many          - Vote on a Dashlite initiative
+ * vote-alias         - Vote on a Dashlite initiative
+ * vote               - Vote on a Dashlite initiative/budget
  * getvotes           - Show current masternode budgets
  * getinfo            - Show current masternode budgets
  * show               - Show all budgets

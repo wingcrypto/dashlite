@@ -17,7 +17,7 @@ osx=true
 SIGNER=
 VERSION=
 commit=false
-url=https://github.com/safeinsure/sinscore
+url=https://github.com/Dashlite/sinscore
 proc=2
 mem=2000
 lxc=true
@@ -31,7 +31,7 @@ commitFiles=true
 read -d '' usage <<- EOF
 Usage: $scriptName [-c|u|v|b|s|B|o|h|j|m|] signer version
 
-Run this script from the directory containing the safeinsure, gitian-builder, gitian.sigs, and safeinsure-detached-sigs.
+Run this script from the directory containing the Dashlite, gitian-builder, gitian.sigs, and Dashlite-detached-sigs.
 
 Arguments:
 signer          GPG signer to sign each build assert file
@@ -39,7 +39,7 @@ version		Version number, commit, or branch to build. If building a commit or bra
 
 Options:
 -c|--commit	Indicate that the version argument is for a commit or branch
--u|--url	Specify the URL of the repository. Default is https://github.com/safeinsure/sinscore
+-u|--url	Specify the URL of the repository. Default is https://github.com/Dashlite/sinscore
 -v|--verify 	Verify the gitian build
 -b|--build	Do a gitian build
 -s|--sign	Make signed binaries for Windows and Mac OSX
@@ -232,8 +232,8 @@ echo ${COMMIT}
 if [[ $setup = true ]]
 then
     sudo apt-get install ruby apache2 git apt-cacher-ng python-vm-builder qemu-kvm qemu-utils
-    git clone https://github.com/safeinsure-project/gitian.sigs.git
-    git clone https://github.com/safeinsure/sinscore-detached-sigs.git
+    git clone https://github.com/Dashlite-project/gitian.sigs.git
+    git clone https://github.com/Dashlite/sinscore-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
     pushd ./gitian-builder
     if [[ -n "$USE_LXC" ]]
@@ -247,7 +247,7 @@ then
 fi
 
 # Set up build
-pushd ./safeinsure
+pushd ./Dashlite
 git fetch
 git checkout ${COMMIT}
 popd
@@ -256,7 +256,7 @@ popd
 if [[ $build = true ]]
 then
 	# Make output folder
-	mkdir -p ./safeinsure-binaries/${VERSION}
+	mkdir -p ./Dashlite-binaries/${VERSION}
 
 	# Build Dependencies
 	echo ""
@@ -266,7 +266,7 @@ then
 	mkdir -p inputs
 	wget -N -P inputs $osslPatchUrl
 	wget -N -P inputs $osslTarUrl
-	make -C ../safeinsure/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../Dashlite/depends download SOURCES_PATH=`pwd`/cache/common
 
 	# Linux
 	if [[ $linux = true ]]
@@ -274,9 +274,9 @@ then
             echo ""
 	    echo "Compiling ${VERSION} Linux"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit safeinsure=${COMMIT} --url safeinsure=${url} ../safeinsure/contrib/gitian-descriptors/gitian-linux.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../safeinsure/contrib/gitian-descriptors/gitian-linux.yml
-	    mv build/out/safeinsure-*.tar.gz build/out/src/safeinsure-*.tar.gz ../safeinsure-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit Dashlite=${COMMIT} --url Dashlite=${url} ../Dashlite/contrib/gitian-descriptors/gitian-linux.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../Dashlite/contrib/gitian-descriptors/gitian-linux.yml
+	    mv build/out/Dashlite-*.tar.gz build/out/src/Dashlite-*.tar.gz ../Dashlite-binaries/${VERSION}
 	fi
 	# Windows
 	if [[ $windows = true ]]
@@ -284,10 +284,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit safeinsure=${COMMIT} --url safeinsure=${url} ../safeinsure/contrib/gitian-descriptors/gitian-win.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../safeinsure/contrib/gitian-descriptors/gitian-win.yml
-	    mv build/out/safeinsure-*-win-unsigned.tar.gz inputs/safeinsure-win-unsigned.tar.gz
-	    mv build/out/safeinsure-*.zip build/out/safeinsure-*.exe ../safeinsure-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit Dashlite=${COMMIT} --url Dashlite=${url} ../Dashlite/contrib/gitian-descriptors/gitian-win.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../Dashlite/contrib/gitian-descriptors/gitian-win.yml
+	    mv build/out/Dashlite-*-win-unsigned.tar.gz inputs/Dashlite-win-unsigned.tar.gz
+	    mv build/out/Dashlite-*.zip build/out/Dashlite-*.exe ../Dashlite-binaries/${VERSION}
 	fi
 	# Mac OSX
 	if [[ $osx = true ]]
@@ -295,10 +295,10 @@ then
 	    echo ""
 	    echo "Compiling ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -j ${proc} -m ${mem} --commit safeinsure=${COMMIT} --url safeinsure=${url} ../safeinsure/contrib/gitian-descriptors/gitian-osx.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../safeinsure/contrib/gitian-descriptors/gitian-osx.yml
-	    mv build/out/safeinsure-*-osx-unsigned.tar.gz inputs/safeinsure-osx-unsigned.tar.gz
-	    mv build/out/safeinsure-*.tar.gz build/out/safeinsure-*.dmg ../safeinsure-binaries/${VERSION}
+	    ./bin/gbuild -j ${proc} -m ${mem} --commit Dashlite=${COMMIT} --url Dashlite=${url} ../Dashlite/contrib/gitian-descriptors/gitian-osx.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../Dashlite/contrib/gitian-descriptors/gitian-osx.yml
+	    mv build/out/Dashlite-*-osx-unsigned.tar.gz inputs/Dashlite-osx-unsigned.tar.gz
+	    mv build/out/Dashlite-*.tar.gz build/out/Dashlite-*.dmg ../Dashlite-binaries/${VERSION}
 	fi
 	popd
 
@@ -325,27 +325,27 @@ then
 	echo ""
 	echo "Verifying v${VERSION} Linux"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../safeinsure/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../Dashlite/contrib/gitian-descriptors/gitian-linux.yml
 	# Windows
 	echo ""
 	echo "Verifying v${VERSION} Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../safeinsure/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../Dashlite/contrib/gitian-descriptors/gitian-win.yml
 	# Mac OSX
 	echo ""
 	echo "Verifying v${VERSION} Mac OSX"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../safeinsure/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../Dashlite/contrib/gitian-descriptors/gitian-osx.yml
 	# Signed Windows
 	echo ""
 	echo "Verifying v${VERSION} Signed Windows"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../safeinsure/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../Dashlite/contrib/gitian-descriptors/gitian-osx-signer.yml
 	# Signed Mac OSX
 	echo ""
 	echo "Verifying v${VERSION} Signed Mac OSX"
 	echo ""
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../safeinsure/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../Dashlite/contrib/gitian-descriptors/gitian-osx-signer.yml
 	popd
 fi
 
@@ -360,10 +360,10 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Windows"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../safeinsure/contrib/gitian-descriptors/gitian-win-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../safeinsure/contrib/gitian-descriptors/gitian-win-signer.yml
-	    mv build/out/safeinsure-*win64-setup.exe ../safeinsure-binaries/${VERSION}
-	    mv build/out/safeinsure-*win32-setup.exe ../safeinsure-binaries/${VERSION}
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../Dashlite/contrib/gitian-descriptors/gitian-win-signer.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../Dashlite/contrib/gitian-descriptors/gitian-win-signer.yml
+	    mv build/out/Dashlite-*win64-setup.exe ../Dashlite-binaries/${VERSION}
+	    mv build/out/Dashlite-*win32-setup.exe ../Dashlite-binaries/${VERSION}
 	fi
 	# Sign Mac OSX
 	if [[ $osx = true ]]
@@ -371,9 +371,9 @@ then
 	    echo ""
 	    echo "Signing ${VERSION} Mac OSX"
 	    echo ""
-	    ./bin/gbuild -i --commit signature=${COMMIT} ../safeinsure/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../safeinsure/contrib/gitian-descriptors/gitian-osx-signer.yml
-	    mv build/out/safeinsure-osx-signed.dmg ../safeinsure-binaries/${VERSION}/safeinsure-${VERSION}-osx.dmg
+	    ./bin/gbuild -i --commit signature=${COMMIT} ../Dashlite/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../Dashlite/contrib/gitian-descriptors/gitian-osx-signer.yml
+	    mv build/out/Dashlite-osx-signed.dmg ../Dashlite-binaries/${VERSION}/Dashlite-${VERSION}-osx.dmg
 	fi
 	popd
 

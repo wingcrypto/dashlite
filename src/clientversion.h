@@ -6,14 +6,14 @@
 #define BITCOIN_CLIENTVERSION_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/safeinsure-config.h"
+#include "config/Dashlite-config.h"
 #else
 
 /**
  * client versioning and copyright year
  */
 
-//! These need to be macros, as clientversion.cpp's and safeinsure*-res.rc's voodoo requires it
+//! These need to be macros, as clientversion.cpp's and Dashlite*-res.rc's voodoo requires it
 #define CLIENT_VERSION_MAJOR 1
 #define CLIENT_VERSION_MINOR 0
 #define CLIENT_VERSION_REVISION 0
@@ -38,10 +38,10 @@
 #define DO_STRINGIZE(X) #X
 
 //! Copyright string used in Windows .rc files
-#define COPYRIGHT_STR "2009-2014 The Bitcoin Core Developers, 2014-2015 The Dash Core Developers,2015-2017 The PIVX developers, 2017-" STRINGIZE(COPYRIGHT_YEAR) " The SafeInsure Core Developers"
+#define COPYRIGHT_STR "2009-2014 The Bitcoin Core Developers, 2014-2015 The Dash Core Developers,2015-2017 The PIVX developers, 2017-" STRINGIZE(COPYRIGHT_YEAR) " The Dashlite Core Developers"
 
 /**
- * safeinsured-res.rc includes this file, but it cannot cope with real c++ code.
+ * Dashlited-res.rc includes this file, but it cannot cope with real c++ code.
  * WINDRES_PREPROC is defined to indicate that its pre-processor is running.
  * Anything other than a define should be guarded below.
  */

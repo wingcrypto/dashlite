@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2018 The SafeInsure Core developers
+// Copyright (c) 2017-2018 The Dashlite Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -84,15 +84,15 @@ public:
         pchMessageStart[3] = 0x91;
         vAlertPubKey = ParseHex("04678f93351301f0209dcfd023fe0f2a58085e56a7bb0936b32e4de73f242277cf402d3995a551276762d42de4e20e1df96bb999959d3436fe38a1a58c3b8f863d");
         nDefaultPort = 39105;
-        bnProofOfWorkLimit = ~uint256(0) >> 20; // SafeInsure starting difficulty is 1 / 2^12
+        bnProofOfWorkLimit = ~uint256(0) >> 20; // Dashlite starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 525600; // one year
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // SafeInsure: every block
-        nTargetSpacing = 1 * 60;  // SafeInsure: 1 minute
+        nTargetTimespan = 1 * 60; // Dashlite: every block
+        nTargetSpacing = 1 * 60;  // Dashlite: 1 minute
         nLastPOWBlock = 210;
         nMaturity = 100;
         nMasternodeCountDrift = 20;
@@ -119,18 +119,18 @@ public:
         assert(hashGenesisBlock == uint256("0x00000130c84f57a7c493014d1ce1820ded6372846da945b44b170c453499d796"));
         assert(genesis.hashMerkleRoot == uint256("0x4c0b221ab5d5e2a22efe8cc6aceed7a81b11e145f05988740cd6de38efc4be1f"));
 
-        vSeeds.push_back(CDNSSeedData("node1", "node1.safeinsure.io"));
-        vSeeds.push_back(CDNSSeedData("node2", "node2.safeinsure.io"));
-        vSeeds.push_back(CDNSSeedData("node3", "node3.safeinsure.io"));
-        vSeeds.push_back(CDNSSeedData("node4", "node4.safeinsure.io"));
-        vSeeds.push_back(CDNSSeedData("node5", "node5.safeinsure.io"));		
+        vSeeds.push_back(CDNSSeedData("node1", "node1.Dashlite.io"));
+        vSeeds.push_back(CDNSSeedData("node2", "node2.Dashlite.io"));
+        vSeeds.push_back(CDNSSeedData("node3", "node3.Dashlite.io"));
+        vSeeds.push_back(CDNSSeedData("node4", "node4.Dashlite.io"));
+        vSeeds.push_back(CDNSSeedData("node5", "node5.Dashlite.io"));		
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 63); // Safeinsure addresses start with 'S'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 20); // Safeinsure script addresses start with '9'
-        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 140);    // Safeinsure private keys start with 'y'
-		// SafeInsure BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 63); // Dashlite addresses start with 'S'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 20); // Dashlite script addresses start with '9'
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 140);    // Dashlite private keys start with 'y'
+		// Dashlite BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-		// SafeInsure BIP32 pubkeys start with 'xprv' (Bitcoin defaults)		
+		// Dashlite BIP32 pubkeys start with 'xprv' (Bitcoin defaults)		
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
         // 	BIP44 coin type is '0X80000a00' from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x0a)(0x00).convert_to_container<std::vector<unsigned char> >();
@@ -180,8 +180,8 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // SafeInsure: 1 day
-        nTargetSpacing = 1 * 60;  // SafeInsure: 1 minute
+        nTargetTimespan = 1 * 60; // Dashlite: 1 day
+        nTargetSpacing = 1 * 60;  // Dashlite: 1 minute
         nLastPOWBlock = 200;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
@@ -197,19 +197,19 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("node1", "node1.safeinsure.io"));
-        vSeeds.push_back(CDNSSeedData("node2", "node2.safeinsure.io"));
-        vSeeds.push_back(CDNSSeedData("node3", "node3.safeinsure.io"));
-        vSeeds.push_back(CDNSSeedData("node4", "node4.safeinsure.io"));
+        vSeeds.push_back(CDNSSeedData("node1", "node1.Dashlite.io"));
+        vSeeds.push_back(CDNSSeedData("node2", "node2.Dashlite.io"));
+        vSeeds.push_back(CDNSSeedData("node3", "node3.Dashlite.io"));
+        vSeeds.push_back(CDNSSeedData("node4", "node4.Dashlite.io"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 127); // Testnet safeinsure addresses start with 't'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 20);  // Testnet safeinsure script addresses start with '9'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 127); // Testnet Dashlite addresses start with 't'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 20);  // Testnet Dashlite script addresses start with '9'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
-		// SafeInsure BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+		// Dashlite BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-		// SafeInsure BIP32 pubkeys start with 'xprv' (Bitcoin defaults)		
+		// Dashlite BIP32 pubkeys start with 'xprv' (Bitcoin defaults)		
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
-        // Testnet safeinsure BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Dashlite BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
@@ -254,8 +254,8 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // SafeInsure: 1 day
-        nTargetSpacing = 1 * 60;        // SafeInsure: 1 minutes
+        nTargetTimespan = 24 * 60 * 60; // Dashlite: 1 day
+        nTargetSpacing = 1 * 60;        // Dashlite: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1537178400;
         genesis.nBits = 0x207fffff;

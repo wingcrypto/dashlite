@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "SafeInsure"
-            VALUE "FileDescription",    "SafeInsure-cli (OSS RPC client for SafeInsure)"
+            VALUE "CompanyName",        "Dashlite"
+            VALUE "FileDescription",    "Dashlite-cli (OSS RPC client for Dashlite)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "safeinsure-cli"
+            VALUE "InternalName",       "Dashlite-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "safeinsure-cli.exe"
-            VALUE "ProductName",        "SafeInsure-cli"
+            VALUE "OriginalFilename",   "Dashlite-cli.exe"
+            VALUE "ProductName",        "Dashlite-cli"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

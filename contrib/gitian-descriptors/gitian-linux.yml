@@ -1,5 +1,5 @@
 ---
-name: "safeinsure-linux-1.0.0"
+name: "Dashlite-linux-1.0.0"
 enable_cache: true
 suites:
 - "trusty"
@@ -21,8 +21,8 @@ packages:
 - "python"
 reference_datetime: "2018-11-01 15:00:00"
 remotes:
-- "url": "https://github.com/safeinsure/sinscore.git"
-  "dir": "safeinsure"
+- "url": "https://github.com/Dashlite/sinscore.git"
+  "dir": "Dashlite"
 files: []
 script: |
 
@@ -106,7 +106,7 @@ script: |
   chmod +x ${WRAP_DIR}/${prog}
   done
 
-  cd safeinsure
+  cd Dashlite
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do
@@ -128,13 +128,13 @@ script: |
   ./autogen.sh
   CONFIG_SITE=${BASEPREFIX}/`echo "${HOSTS}" | awk '{print $1;}'`/share/config.site ./configure --prefix=/
   make dist
-  SOURCEDIST=`echo safeinsure-*.tar.gz`
+  SOURCEDIST=`echo Dashlite-*.tar.gz`
   DISTNAME=`echo ${SOURCEDIST} | sed 's/.tar.*//'`
   # Correct tar file order
   mkdir -p temp
   pushd temp
   tar xf ../$SOURCEDIST
-  find safeinsure-* | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ../$SOURCEDIST
+  find Dashlite-* | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ../$SOURCEDIST
   popd
 
   ORIGPATH="$PATH"
