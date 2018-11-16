@@ -6,7 +6,7 @@ Dashlite is a decentralized insurance marketplace bringing equitable price disco
 - Anonymized transactions using coin mixing technology, we call it _Privatesend_.
 - Fast transactions featuring guaranteed zero confirmation transactions, we call it _InstantSend_.
 
-More information at [Dashlite.io](https://www.Dashlite.io)
+More information at [Dashlite.co](https://www.Dashlite.co)
 
 ### Coin Specs
 <table>
@@ -22,7 +22,7 @@ More information at [Dashlite.io](https://www.Dashlite.io)
 <tr><td>Premine</td><td>5% *</td></tr>
 </table>
 
-*View Coin Distribution on [Dashlite.io](https://www.Dashlite.io)
+*View Coin Distribution on [Dashlite.co](https://www.Dashlite.co)
 
 ### Reward Distribution
 

@@ -32,7 +32,7 @@ For this guide, I’m going to refer to your main computer’s wallet as the mai
 
 ### II. Install main wallet and configuration
 
-1. Go to https://www.Dashlite.io/ and download wallet for your windows
+1. Go to https://www.Dashlite.co/ and download wallet for your windows
 2. Unpack it and launch ***Dashlite-qt.exe***
 3. Select "Use a custom data directory" and use D:\Dashlite\data as folder
 4. SETTINGS -> OPTIONS -> WALLET and check "Show Masternodes Tab". Press OK and restart main wallet
